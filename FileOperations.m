@@ -1,3 +1,5 @@
+%%Part1: Working with file and folder functions and command.
+
 %% Change current working directory (cd), add a folder to search path of MATLAB(addpath)
 clear % clear all variables
 clc   % clear all command window
@@ -18,6 +20,14 @@ cd ..
 cd 'File Operations'
 cd ../..  %up 2 level
 doc cd %for more
+
+
+%% for loop in Matlab
+for a = [1 5 8 17]
+   msg = ['The number is: ', int2str(a)]
+   disp(msg)
+end
+%doc for
 
 %% list folder contents
 % using dir
@@ -92,7 +102,11 @@ disp(dir)
 file_name = full_file.name
 disp(file_name)
 
-%% Loop through all images file in a folder and display them
+
+
+%%Part2: Put them all together in Examples
+
+%% Example 1: Loop through all images file in a folder and display them
 cd 'C:\PhD20162020\MATLAB\MATLAB_help_center\Programming\Files and Folders\File Operations\images'
 image_files_dir = dir('00*.jpg');
 msg = ['No of image: ',int2str(length(image_files_dir))]
@@ -118,7 +132,7 @@ end
 %    imshow(imread(i_fullpath))
 % end
 
-%% create,and delete txt files, folders
+%% Example 2: create,and delete txt files, folders
 %create a new file named: temporary folder.txt
 temp_file_name = 'temporary folder.txt';
 fclose(fopen(temp_file_name, 'w'));
